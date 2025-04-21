@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tampilan foto profile</title>
+    <style>
+        body {
+            background-color: rgb(36, 34, 34);
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: azure;
+            margin-top: 35px;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        .tampil {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tampil img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 25px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            background-color: azure;
+        }
+
+        .tombol {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preview Foto Profile</h1>
+    <div class="tampil">
+        <img id="tampilan" src="" alt="tampilan besar">
+    </div>
+    <div class="tombol">
+        <a href="profile.html">Edit foto</a>
+    </div>
+
+    <script>
+        const savedImage = localStorage.getItem("profilePhoto");
+        const imgElement = document.getElementById("tampilan");
+      
+        if (savedImage) {
+          imgElement.src = savedImage;
+        } else {
+          imgElement.src = "default.jpg"; // fallback jika belum upload
+        }
+      </script>
+
+
+</body>
+</html>
